@@ -6,5 +6,5 @@
 # Usage: bash sk <application name>
 # example: bash sk steam
 
-ps aux | grep -i $1 | awk '{print $2}' > /tmp/.kill; while read i; do kill $i; done < /tmp/.kill
+pgrep -f -i $1 > /tmp/.kill; while read i; do kill $i; done < /tmp/.kill
 rm /tmp/.kill
