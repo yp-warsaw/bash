@@ -6,5 +6,4 @@
 # Usage: bash sk <application name>
 # example: bash sk steam
 
-pgrep -f -i $1 > /tmp/.kill; while read i; do kill $i; done < /tmp/.kill
-rm /tmp/.kill
+for i in $(pgrep -f -i $1);do kill $i;done
